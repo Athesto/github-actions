@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is the user which execute the code
 on: [push]
 jobs:
   J0101-Exploring-file:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
       - run: echo "${{ github.event_name }} event activated"
       - run: echo "OS ${{ runner.os }}"
