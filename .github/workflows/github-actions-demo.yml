@@ -5,13 +5,11 @@ jobs:
   J0101-Exploring-file:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "Summary
-          Event: ${{ github.event_name }}
+      - run: echo Summary
+          "Event: ${{ github.event_name }}
           OS: ${{ runner.os }}
           Repository: ${{ github.repository }}
-          Branch: ${{ github.ref }}
-          DONE"
+          Branch: ${{ github.ref }}"
       - run: echo "${{ github.event_name }} event activated"
       - run: echo "OS ${{ runner.os }}"
       - run: echo "Branch name ${{ github.ref }}"
