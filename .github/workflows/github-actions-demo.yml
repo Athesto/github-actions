@@ -13,12 +13,14 @@ jobs:
           Repository: ${{ github.repository }}
           Branch: ${{ github.ref }}"
       - run: |
-          echo "hello"
-          echo "foo"
+          echo "Hi"
+          echo "my name is tavo"
           cd ${{github.workspace}}
-          echo "this is a command" > foo
+          echo "welcome to tijuana" > foo
           cat foo
           ls
+          pwd
+          docker --version
           echo "end of file"
       - name: Check out repository code
         uses: actions/checkout@v3
