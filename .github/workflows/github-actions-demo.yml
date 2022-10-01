@@ -6,8 +6,8 @@ jobs:
     runs-on: ubuntu-lastest
     steps:
       - run: echo "${{ github.event_name }} event activated"
-      - run: echo "OS: ${{ runner.os }}"
-      - run: echo "Branch name: ${{ github.ref }}"
+      - run: echo "OS ${{ runner.os }}"
+      - run: echo "Branch name ${{ github.ref }}"
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo " The ${{ github.repository }} repository has been cloned to the runner."
