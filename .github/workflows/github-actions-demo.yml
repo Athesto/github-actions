@@ -12,10 +12,10 @@ jobs:
           OS: ${{ runner.os }}
           Repository: ${{ github.repository }}
           Branch: ${{ github.ref }}"
-      - run:
-          - cd ${{github.workspace}}
-          - echo "this is a command" > foo
-          - cat foo
+      - run: |
+          cd ${{github.workspace}}
+          echo "this is a command" > foo
+          cat foo
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: >
