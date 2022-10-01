@@ -6,7 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Welcome to tijana
+          echo "Summary
+          Event: ${{ github.event_name }}
+
           ${{ runner.os }}"
       - run: echo "${{ github.event_name }} event activated"
       - run: echo "OS ${{ runner.os }}"
