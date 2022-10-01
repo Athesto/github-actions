@@ -6,8 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Summary
-          Event: ${{ github.event_name }}
+          echo Summary
+          "Event: ${{ github.event_name }}
           OS: ${{ runner.os }}
           Repository: ${{ github.repository }}
           Branch: ${{ github.ref }}"
