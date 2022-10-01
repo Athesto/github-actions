@@ -5,7 +5,7 @@ jobs:
   J0101-Exploring-file:
     runs-on: ubuntu-latest
     steps:
-      - run: echo Summary
+      - run: echo Summary |
           "Event: ${{ github.event_name }}
           OS: ${{ runner.os }}
           Repository: ${{ github.repository }}
