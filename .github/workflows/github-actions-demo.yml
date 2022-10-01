@@ -2,7 +2,7 @@ name: 01-Demo-github-actions
 run-name: ${{ github.actor }} is the user which execute the code
 on: [push]
 jobs:
-  0101-Exploring-file:
+  J0101-Exploring-file:
     runs-on: ubuntu-lastest
     steps:
       - run: echo "${{ github.event_name }} event activated"
