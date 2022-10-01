@@ -13,6 +13,8 @@ jobs:
           Repository: ${{ github.repository }}
           Branch: ${{ github.ref }}"
       - run: |
+          echo "hello"
+          echo "foo"
           cd ${{github.workspace}}
           echo "this is a command" > foo
           cat foo
