@@ -18,6 +18,8 @@ jobs:
           cd ${{github.workspace}}
           echo "this is a command" > foo
           cat foo
+          ls
+          echo "end of file"
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: >
