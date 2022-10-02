@@ -1,7 +1,11 @@
 ---
 name: 01-Demo-github-actions
 run-name: ${{ github.actor }} is the user which execute the code
-on: [push]
+#on: [push]
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+
 jobs:
   J0101-Exploring-file:
     runs-on: ubuntu-latest
@@ -13,7 +17,7 @@ jobs:
           Repository: ${{ github.repository }}
           Branch: ${{ github.ref }}"
       - run: |
-          echo "Hi"
+          echo "Running script"
           echo "my name is tavo"
           cd ${{github.workspace}}
           echo "welcome to tijuana" > foo
