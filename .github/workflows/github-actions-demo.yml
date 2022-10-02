@@ -1,8 +1,11 @@
 ---
 name: 01-Demo-github-actions
 run-name: ${{ github.actor }} is the user which execute the code
-#on: [push]
+# on: [push]
 on:
+  push:
+    branches:
+      - "main"
   schedule:
     - cron: '* * * * *'
 
