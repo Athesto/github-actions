@@ -31,7 +31,7 @@ services:
     entrypoint: 'bash'  # 'yarn test'
     environment:
       - "DEV_URL=http://server:3000"
-      - "SELENIUM_REMOTE_URL=http://chrome:4444/wd/hub"
+      - "SELENIUM_REMOTE_URL=http://chrome2:4444/wd/hub"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://server:3000"]
       interval: 30s
