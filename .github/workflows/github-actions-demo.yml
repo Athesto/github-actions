@@ -39,13 +39,15 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: |
-          echo "Download Dependences"
+          echo "Download yarn Dependences"
           cd ${{ github.workspace }}/jest-selenium/
-          yarn
+          yarn --frozen-lockfile
       - run: |
-          echo "Docker compose"
+          echo "Docker compose start services"
           cd ${{ github.workspace }}/Docker
           docker compose up -d
           echo "waiting for services"
+          docker compose exec tests bash -c "echo 'server'; curl server:3000; echo $?"
+          docker compose exec tests bash -c "echo 'chrome'; curl chrome:4444/wd/hub; echo $?"
           docker compose exec tests yarn test
       - run: echo "🍏 This job's status is ${{ job.status }}."
