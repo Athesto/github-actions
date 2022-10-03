@@ -42,11 +42,11 @@ jobs:
           echo "Testing project"
           cd Docker
           docker compose up -d
-          docker compose exec server sh -c "sudo apt update && sudo apt install -y iproute2 && sudo ss -4tpnl"
+          # docker compose exec server sh -c "sudo apt update && sudo apt install -y iproute2 && sudo ss -4tpnl"
           # curl "localhost:3000"
           docker compose ps
           docker compose exec tests ls
-          docker compose exec tests curl "server:3000"
+          # docker compose exec tests curl "server:3000"
           docker compose exec tests sh -c "env | sort"
           docker compose exec tests yarn
           docker compose exec tests yarn test
