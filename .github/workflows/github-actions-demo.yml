@@ -55,4 +55,5 @@ jobs:
           docker compose exec tests yarn
           sleep 10
           docker compose exec tests yarn test
+          docker compose ps
       - run: echo "🍏 This job's status is ${{ job.status }}."
