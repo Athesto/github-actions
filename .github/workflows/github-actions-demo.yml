@@ -38,4 +38,9 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - run: |
+          echo "Testing project"
+          cd Docker
+          docker compose up -d
+          docker compose exec tests yarn test
       - run: echo "🍏 This job's status is ${{ job.status }}."
