@@ -40,7 +40,9 @@ jobs:
           ls ${{ github.workspace }}
       - run: |
           echo "Testing project"
-          cd Docker
+          cd ${{ github.workspace }}/jest-selenium/
+          yarn
+          cd ${{ github.workspace }}/Docker
           docker compose up
           # docker compose exec server sh -c "sudo apt update && sudo apt install -y iproute2 && sudo ss -4tpnl"
           echo "curl server"
