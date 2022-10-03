@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "test-debug": "NODE_OPTIONS='--inspect-brk' jest --runInBand"
+    "test-debug": "NODE_OPTIONS='--inspect-brk' jest --runInBand",
+    "docker-up": "cd ../Docker; docker compose up -d"
   },
   "dependencies": {
     "next": "12.3.1",
