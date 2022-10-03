@@ -6,8 +6,8 @@ on:
   push:
     branches:
       - "main"
-  schedule:
-    - cron: '* * * * *'
+#   schedule:
+#     - cron: '* * * * *'
 
 jobs:
   J0101-Exploring-file:
@@ -42,6 +42,7 @@ jobs:
           echo "Testing project"
           cd Docker
           docker compose up -d
+          docker compose exec chrome sh -c "sudo apt update && sudo apt install -y iproute2 && sudo ss -4tpnl"
           # curl "localhost:3000"
           docker compose ps
           docker compose exec tests ls
