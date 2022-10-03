@@ -44,10 +44,6 @@ jobs:
           yarn
           cd ${{ github.workspace }}/Docker
           docker compose up -d
-          echo "curl server"
-          curl "localhost:3000" || echo $?
-          echo "curl chrome"
-          curl "localhost:4444" || echo $?
           docker compose ps
           docker compose exec tests ls
           docker compose exec tests bash -c "echo 'server'; curl server:3000; echo $?"
