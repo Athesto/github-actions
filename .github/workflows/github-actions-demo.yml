@@ -38,19 +38,21 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+
+
       - run: |
-          echo "Download yarn Dependences"
+          echo "Download yarn Dependences with frozen lockfile"
           cd ${{ github.workspace }}/jest-selenium/
           yarn --frozen-lockfile
       - run: |
-          echo "Docker compose start services"
+          echo "Docker compose starts the services"
           cd ${{ github.workspace }}/Docker
           docker compose up -d
           echo "waiting for services"
           docker compose exec tests bash -c "echo 'server'; curl server:3000; echo $?"
           docker compose exec tests bash -c "echo 'chrome'; curl chrome:4444/wd/hub; echo $?"
       - run: |
-          cd ${{ github.workspace }}/Docker
           echo "Yarn test"
+          cd ${{ github.workspace }}/Docker
           docker compose exec tests yarn test
       - run: echo "🍏 This job's status is ${{ job.status }}."
