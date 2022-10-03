@@ -49,8 +49,8 @@ jobs:
           cd ${{ github.workspace }}/Docker
           docker compose up -d
           echo "waiting for services"
-          docker compose exec tests bash -c "echo 'server'; curl server:3000; echo $?"
-          docker compose exec tests bash -c "echo 'chrome'; curl chrome:4444/wd/hub; echo $?"
+          docker compose exec tests bash -c "echo 'server'; curl server:3000 --retry 5 --retry-delay 5 --retry-conrefused; echo $?"
+          docker compose exec tests bash -c "echo 'chrome'; curl chrome:4444/wd/hub --retry 5 --retry-delay 5 --retry-conrefused; echo $?"
       - run: |
           echo "Yarn test"
           cd ${{ github.workspace }}/Docker
