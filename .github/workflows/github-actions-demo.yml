@@ -40,12 +40,12 @@ jobs:
           ls ${{ github.workspace }}
 
 
-      - run: |
-          echo "Download yarn Dependences with frozen lockfile"
+      - name: "Download yarn Dependences with frozen lockfile"
+        run: |
           cd ${{ github.workspace }}/jest-selenium/
           yarn --frozen-lockfile
+      - name: "Docker compose starts the services"
       - run: |
-          echo "Docker compose starts the services"
           cd ${{ github.workspace }}/Docker
           docker compose up -d
           echo "waiting for services"
