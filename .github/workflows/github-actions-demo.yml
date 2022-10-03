@@ -42,7 +42,7 @@ jobs:
           echo "Testing project"
           cd Docker
           docker compose up -d
-          curl "localhost:3000"
+          # curl "localhost:3000"
           docker compose ps
           docker compose exec tests ls
           docker compose exec tests curl "server:3000"
