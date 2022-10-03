@@ -45,5 +45,6 @@ jobs:
           docker compose ps
           docker compose exec tests ls
           docker compose exec tests sh -c "env | sort"
+          docker compose exec tests yarn
           docker compose exec tests yarn test
       - run: echo "🍏 This job's status is ${{ job.status }}."
