@@ -43,7 +43,7 @@ jobs:
           cd Docker
           docker compose up -d
           # docker compose exec server sh -c "sudo apt update && sudo apt install -y iproute2 && sudo ss -4tpnl"
-          # curl "localhost:3000"
+          curl "localhost:3000" || echo $?
           docker compose ps
           docker compose exec tests ls
           # docker compose exec tests curl "server:3000"
