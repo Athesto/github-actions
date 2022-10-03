@@ -43,7 +43,7 @@ jobs:
           cd ${{ github.workspace }}/jest-selenium/
           yarn
           cd ${{ github.workspace }}/Docker
-          docker compose up
+          docker compose up -d
           # docker compose exec server sh -c "sudo apt update && sudo apt install -y iproute2 && sudo ss -4tpnl"
           echo "curl server"
           curl "localhost:3000" || echo $?
