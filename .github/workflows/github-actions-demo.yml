@@ -50,6 +50,7 @@ jobs:
           docker compose exec tests bash -c "echo 'server'; curl server:3000; echo $?"
           docker compose exec tests bash -c "echo 'chrome'; curl chrome:4444/wd/hub; echo $?"
       - run: |
+          cd ${{ github.workspace }}/Docker
           echo "Yarn test"
           docker compose exec tests yarn test
       - run: echo "🍏 This job's status is ${{ job.status }}."
