@@ -17,7 +17,7 @@ test('T001 - open valid page and check title', async ()=> {
     const xpath = '//h1'
     await driver.wait(until.elementLocated(By.xpath(xpath)), 10e3);
     const titles = await driver.findElement(By.xpath(xpath)).getText();
-    await expect(titles).toBe('Welcome to Next.js!2');
+    await expect(titles).toBe('Welcome to Next.js!');
     await driver.quit()
   } catch (e) {
     await driver.quit()
