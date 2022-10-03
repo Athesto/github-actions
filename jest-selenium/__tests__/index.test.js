@@ -14,15 +14,16 @@ test('T001 - open valid page and check title', async ()=> {
     .build();
   try {
     await driver.get(DEV_URL)
-    wait(100e3)
-    const xpath = '//input'
+    const xpath = '//h1'
     await driver.wait(until.elementLocated(By.xpath(xpath)), 10e3);
     const titles = await driver.findElement(By.xpath(xpath)).getText();
-    console.table(titles);
+    await expect(titles).toBe('Welcome to Next.js!');
+    await driver.quit()
   } catch (e) {
+    await driver.quit()
     console.log(e);
+    throw e
   }
 
-  await driver.quit()
 
 }, 100e3); // 100 segs
