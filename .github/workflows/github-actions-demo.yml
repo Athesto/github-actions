@@ -12,8 +12,10 @@ on:
 jobs:
   J0101-Exploring-file:
     runs-on: ubuntu-latest
+    environment: QA
     steps:
-      - run: |
+      - name: Summary
+        run: |
           echo "Summary
           Event: ${{ github.event_name }}
           OS: ${{ runner.os }}
@@ -21,7 +23,6 @@ jobs:
           Branch: ${{ github.ref }}
           env-github: ${{ github.FOOBAR }}
           env-env: ${{ env.FOOBAR }}
-          alone: ${{ FOOBAR }}
           "
       - run: |
           echo "Running script"
