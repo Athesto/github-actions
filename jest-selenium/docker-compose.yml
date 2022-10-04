@@ -18,19 +18,20 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - "$PWD/../jest-selenium:/jest-selenium"
-    working_dir: '/jest-selenium'
+      - "$PWD:/project"
+    working_dir: '/project'
     entrypoint: 'yarn dev'
 
   tests:
     image: node
     tty: true
     volumes:
-      - "$PWD/../jest-selenium:/jest-selenium"
-    working_dir: '/jest-selenium'
+      - "$PWD:/project"
+    working_dir: '/project'
     entrypoint: 'bash'  # 'yarn test'
     environment:
       - "DEV_URL=http://server:3000"
+      #- "DEV_URL=http://dashboard-qa.harmonicft.com"
       - "SELENIUM_REMOTE_URL=http://chrome:4444/wd/hub"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://server:3000"]
