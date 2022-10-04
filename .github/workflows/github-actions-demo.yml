@@ -21,6 +21,7 @@ jobs:
           Branch: ${{ github.ref }}
           env-github: ${{ github.FOOBAR }}
           env-env: ${{ env.FOOBAR }}
+          alone: ${{ FOOBAR }}
           "
       - run: |
           echo "Running script"
