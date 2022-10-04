@@ -16,6 +16,7 @@ jobs:
     steps:
       - name: Summary
         run: |
+          env
           echo "Summary
           Event: ${{ github.event_name }}
           OS: ${{ runner.os }}
