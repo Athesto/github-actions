@@ -18,7 +18,10 @@ jobs:
           Event: ${{ github.event_name }}
           OS: ${{ runner.os }}
           Repository: ${{ github.repository }}
-          Branch: ${{ github.ref }}"
+          Branch: ${{ github.ref }}
+          env-github: ${{ github.FOOBAR }}
+          env-env: ${{ env.FOOBAR }}
+          "
       - run: |
           echo "Running script"
           echo "my name is tavo"
