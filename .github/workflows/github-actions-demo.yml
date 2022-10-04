@@ -24,8 +24,8 @@ jobs:
           Branch: ${{ github.ref }}
           env-github: ${{ github.FOOBAR }}
           env-env: ${{ env.FOOBAR }}
-          env-root: ${{ FOOBAR }}
           "
+          echo "$FOOBAR"
       - run: |
           echo "Running script"
           echo "my name is tavo"
