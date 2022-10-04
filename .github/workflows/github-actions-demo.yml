@@ -16,7 +16,6 @@ jobs:
     steps:
       - name: Summary
         run: |
-          env
           echo "Summary
           Event: ${{ github.event_name }}
           OS: ${{ runner.os }}
@@ -26,6 +25,7 @@ jobs:
           env-env: ${{ env.FOOBAR }}
           "
           echo "$FOOBAR"
+      - run: sh -c "env | sort"
       - run: |
           echo "Running script"
           echo "my name is tavo"
