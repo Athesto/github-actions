@@ -23,6 +23,7 @@ jobs:
           Branch: ${{ github.ref }}
           env-github: ${{ github.FOOBAR }}
           env-env: ${{ env.FOOBAR }}
+          env-root: ${{ FOOBAR }}
           "
       - run: |
           echo "Running script"
