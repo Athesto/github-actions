@@ -16,9 +16,10 @@ jobs:
     steps:
       - name: Summary
         env:
-          FOOBAR: ${{ secrets.FOOBAR }}
+          FOOBAR: ${{ secrets.URL2 }}
         run: |
           python3 -c 'import os; print(os.getenv("FOOBAR"))'
+          python3 -c "import os, requests; print(requests.get(os.getenv('FOO')).text)"
           echo "Summary
           env-secret: ${{ secrets.FOOBAR }}
           env-secret: ${{ secrets.FOOBAR2 }}
