@@ -19,7 +19,7 @@ jobs:
           FOOBAR: ${{ secrets.URL2 }}
         run: |
           python3 -c 'import os; print(os.getenv("FOOBAR"))'
-          python3 -c "import os, requests; print(requests.get(os.getenv('FOO')).text)"
+          python3 -c "import os, requests; print(requests.get(os.getenv('FOOBAR')).text)"
           echo "Summary
           env-secret: ${{ secrets.FOOBAR }}
           env-secret: ${{ secrets.FOOBAR2 }}
