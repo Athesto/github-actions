@@ -51,4 +51,4 @@ jobs:
             echo $?"
           docker compose exec tests bash -c "env | sort"
       - name: Initialize Tests
-        run: yarn test
+        run: docker compose exec tests yarn test
