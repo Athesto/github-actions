@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const {Builder, Capabilities, By, until, Key} = require('selenium-webdriver');
 const SELENIUM_REMOTE_URL = getEnv('SELENIUM_REMOTE_URL');
+console.log(SELENIUM_REMOTE_URL)
 const APP_URL = getEnv('APP_URL');
 console.log(APP_URL)
 
