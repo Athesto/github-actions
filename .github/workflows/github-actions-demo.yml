@@ -32,11 +32,6 @@ jobs:
           Branch: ${{ github.ref }}
           "
           echo "$FOOBAR"
-      - run: |
-        uses: actions/checkout@v3
-          pip install selenium
-          python3 -c "print('hello'); print('bye'); import selenium;"
-          python3 ${{github.workspace}}/01-google.py
 
       - run: sh -c "env | sort"
       - run: |
@@ -51,6 +46,11 @@ jobs:
           echo "end of file"
       - name: Check out repository code
         uses: actions/checkout@v3
+      - name: Selenium Tests
+        run: |
+          pip install selenium
+          python3 -c "print('hello'); print('bye'); import selenium;"
+          python3 ${{github.workspace}}/01-google.py
       - run: >
           echo "The ${{ github.repository }} repository
           has been cloned to the runner."
