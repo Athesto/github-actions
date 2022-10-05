@@ -11,6 +11,10 @@ defaults:
   run:
     shell: bash
     working-directory: ./jest-selenium
+    env:
+      QA_URL: ${{ secrets.QA_URL }}
+      LOCAL_URL: http://server:3000
+      APP_URL: ''
 
 jobs:
   J0201-Selenium:
@@ -21,10 +25,6 @@ jobs:
       - name: Initialize dependences
         run: yarn --frozen-lockfile
       - name: Initialize containers
-        env:
-          QA_URL: ${{ secrets.QA_URL }}
-          LOCAL_URL: http://server:3000
-          APP_URL: ${{ env.LOCAL_URL }}
         run: |
           export APP_URL=${LOCAL_URL}
           echo ${QA_URL}
