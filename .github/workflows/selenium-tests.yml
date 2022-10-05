@@ -49,4 +49,4 @@ jobs:
               --retry-connrefused; \
             echo $?"
       - name: Initialize Tests
-        run: yarn tests
+        run: yarn test
