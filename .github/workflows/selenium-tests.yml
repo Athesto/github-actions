@@ -18,5 +18,13 @@ jobs:
     environment: QA
     steps:
       - uses: actions/checkout@v3
-      - name: Setup containers
-        run: echo "welcome"
+      - name: Initialize dependences
+        run: yarn --frozen-lockfile
+      - name: Initialize containers
+        run: |
+          docker compose up -d
+          docker compose exec tests bash -c \
+           "echo 'server'; \
+            curl -I server:3000 --retry 5 --retry-delay 5 --retry-connrefused; \
+            echo $?"
+          docker compose exec tests bash -c "echo 'chrome'; curl -I chrome:4444/wd/hub --retry 5 --retry-delay 5 --retry-connrefused; echo $?"
