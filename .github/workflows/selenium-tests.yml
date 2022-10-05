@@ -24,7 +24,7 @@ jobs:
         env:
           QA_URL: ${{ secrets.QA_URL }}
           LOCAL_URL: http://server:3000
-          APP_URL: ${{ LOCAL_URL }}
+          APP_URL: ${{ env.LOCAL_URL }}
         run: |
           echo ${QA_URL}
           echo ${LOCAL_URL}
