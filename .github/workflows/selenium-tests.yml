@@ -26,9 +26,11 @@ jobs:
           LOCAL_URL: http://server:3000
           APP_URL: ${{ env.LOCAL_URL }}
         run: |
+          export APP_URL=${LOCAL_URL}
           echo ${QA_URL}
           echo ${LOCAL_URL}
           echo ${APP_URL}
+          echo "-------"
           docker compose up -d
           docker compose exec tests bash -c "echo 'server'; \
             curl \
