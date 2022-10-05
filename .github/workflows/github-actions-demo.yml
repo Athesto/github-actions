@@ -33,6 +33,7 @@ jobs:
           "
           echo "$FOOBAR"
       - run: |
+        uses: actions/checkout@v3
           pip install selenium
           python3 -c "print('hello'); print('bye'); import selenium;"
           python3 ${{github.workspace}}/01-google.py
