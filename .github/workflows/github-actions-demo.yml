@@ -18,6 +18,7 @@ jobs:
         run: |
           echo "Summary
           env-secret: ${{ secrets.FOOBAR }}
+          env-secret: ${{ secrets.FOOBAR2 }}
           env-secret: ${{ secrets }}
           env-github: ${{ github.FOOBAR }}
           env-env: ${{ env.FOOBAR }}
