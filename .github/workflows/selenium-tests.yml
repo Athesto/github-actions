@@ -1,0 +1,17 @@
+---
+name: 02-Selenium-Tests
+run-name: ${{ github.actor }} runs a selenium validation
+
+on:
+  push:
+    branches:
+      - "qa/**"
+
+jobs:
+  J0201-Selenium:
+    runs-on: ubuntu-latest
+    working-directory: ./jest-selenium
+    environment: QA
+    steps:
+      - name: Setup containers
+        run: echo "welcome"
