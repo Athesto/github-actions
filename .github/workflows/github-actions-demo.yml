@@ -16,6 +16,7 @@ jobs:
     steps:
       - name: Summary
         run: |
+          export FOO="${{ secrets.FOOBAR }}"; python3 -c 'import os; print(os.environ["FOO"])'
           echo "Summary
           env-secret: ${{ secrets.FOOBAR }}
           env-secret: ${{ secrets.FOOBAR2 }}
