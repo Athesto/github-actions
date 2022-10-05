@@ -17,14 +17,20 @@ jobs:
       - name: Summary
         run: |
           echo "Summary
+          env-secret: ${{ secrets.FOOBAR }}
+          env-secret: ${{ secrets }}
+          env-github: ${{ github.FOOBAR }}
+          env-env: ${{ env.FOOBAR }}
           Event: ${{ github.event_name }}
           OS: ${{ runner.os }}
           Repository: ${{ github.repository }}
           Branch: ${{ github.ref }}
-          env-github: ${{ github.FOOBAR }}
-          env-env: ${{ env.FOOBAR }}
           "
           echo "$FOOBAR"
+      - run: |
+          pip install selenium
+          python3 -c "print('hello'); print('bye'); import selenium;"
+
       - run: sh -c "env | sort"
       - run: |
           echo "Running script"
