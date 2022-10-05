@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 const { getEnv, wait } = require('../src/custom_functions.js');
 require('dotenv').config();
+console.table(process.env);
+console.log(process.env);
 
 const {Builder, Capabilities, By, until, Key} = require('selenium-webdriver');
 const SELENIUM_REMOTE_URL = getEnv('SELENIUM_REMOTE_URL');
