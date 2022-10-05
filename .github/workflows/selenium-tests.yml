@@ -7,10 +7,14 @@ on:
     branches:
       - "qa/**"
 
+default:
+  run:
+    shell: bash
+    working-directory: ./jest-selenium
+
 jobs:
   J0201-Selenium:
     runs-on: ubuntu-latest
-    working-directory: ./jest-selenium
     environment: QA
     steps:
       - name: Setup containers
