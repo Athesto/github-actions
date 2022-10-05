@@ -18,7 +18,7 @@ jobs:
         env:
           FOOBAR: ${{ secrets.FOOBAR }}
         run: |
-          python3 -c 'import os; print(os.environ["FOO"])'
+          python3 -c 'import os; print(os.getenv("FOOBAR"))'
           echo "Summary
           env-secret: ${{ secrets.FOOBAR }}
           env-secret: ${{ secrets.FOOBAR2 }}
