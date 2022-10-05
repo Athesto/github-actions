@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: QA
     steps:
-      - env:
-          FOOBAR: ${{ secrets.FOOBAR }}
       - name: Summary
+        env:
+          FOOBAR: ${{ secrets.FOOBAR }}
         run: |
           python3 -c 'import os; print(os.environ["FOO"])'
           echo "Summary
