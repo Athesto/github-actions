@@ -50,8 +50,10 @@ jobs:
               --retry-connrefused; \
             echo $?"
       - name: Logs Services
-        run:
-          docker compose logs server
+        run: |
+          echo "Log Selenium"
           docker compose logs chrome
+          echo "Log Server"
+          docker compose logs server
       - name: Initialize Tests
         run: docker compose exec tests yarn test
