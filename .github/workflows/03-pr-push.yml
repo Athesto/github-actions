@@ -1,28 +1,20 @@
 name: Ejemplo de Workflow
-on:
-  push:
-    branches:
-      - main
-      - dev
-  pull_request:
-    branches:
-      - main
-      - dev
+on: [push, pull_request]
 
 jobs:
-  job1:
+  push2main:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Paso 1
         run: echo "Este es el trabajo 1 para la rama main"
-  job2:
+  push2dev:
     if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
     steps:
       - name: Paso 1
         run: echo "Este es el trabajo 2 para la rama dev"
-  job3:
+  cratedPR:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
