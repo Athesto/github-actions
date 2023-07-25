@@ -1,3 +1,4 @@
+name: manual-trigger-demo
 on:
   workflow_dispatch:
     inputs:
