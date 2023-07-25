@@ -1,0 +1,35 @@
+---
+name: 04-demo
+run-name: demo-env
+# on: [push]
+on:
+  push:
+    branches:
+      - "main"
+#   schedule:
+#     - cron: '* * * * *'
+
+jobs:
+  J0104-demo:
+    runs-on: ubuntu-latest
+    environment: QA
+    steps:
+      - name: Summary
+        env:
+          FOOBAR: ${{ secrets.URL2 }}
+        run: |
+          python3 -c 'import os; print(os.getenv("FOOBAR"))'
+          python3 -c "import os, requests; print(requests.get(os.getenv('FOOBAR')).text)"
+          echo "Summary
+          env-secret: ${{ secrets.FOOBAR }}
+          env-secret: ${{ secrets.FOOBAR2 }}
+          env-secret: ${{ secrets }}
+          env-github: ${{ github.FOOBAR }}
+          env-env: ${{ env.FOOBAR }}
+          Event: ${{ github.event_name }}
+          OS: ${{ runner.os }}
+          Repository: ${{ github.repository }}
+          Branch: ${{ github.ref }}
+          "
+          echo "$FOOBAR"
+
